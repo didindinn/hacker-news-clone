@@ -48,12 +48,14 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
+          <% if user_signed_in? %>
+            <%= link_to "Submit link", new_link_path, class:"button is-info" %>
+            <%= link_to "Account", edit_user_registration_path, class:"button is-primary" %>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"button is-light" %>
+          <% else %>
+           <%= link_to "Sign Up", new_user_registration_path, class:"button is-primary" %>
+           <%= link_to "Sign In", new_user_session_path, class:"button is-light" %>
+          <% end %>
         </div>
       </div>
     </div>
