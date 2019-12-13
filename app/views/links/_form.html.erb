@@ -12,16 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: "label" %>
+    <%= form.text_field :title, class: "input" %>
   </div>
 
   <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.label :url, class: "label" %>
+    <%= form.text_field :url, class: "input" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+
+      <%= form.submit "Submit Link", :class => "button is-fullwidth is-primary" %>
+
   </div>
 <% end %>
